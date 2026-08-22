@@ -31,20 +31,10 @@ const { t } = useI18n()
             class="p-6 rounded-2xl bg-white dark:bg-[#161422] border border-zinc-200 dark:border-[#2f273d] space-y-4 shadow-sm"
           >
             <div
-              class="relative inline-flex items-center group pb-2 border-b border-zinc-100 dark:border-[#262035] w-full"
+              class="flex items-center gap-2 font-mono text-xs text-zinc-400 dark:text-zinc-500 pb-2 border-b border-zinc-100 dark:border-[#262035]"
             >
-              <div
-                class="flex items-center gap-2 font-mono text-xs text-zinc-400 dark:text-zinc-500 cursor-help"
-              >
-                <span class="text-rose-600 dark:text-rose-400 font-bold">$</span>
-                <span>cat ~/about/bio.txt</span>
-              </div>
-              <!-- Tooltip -->
-              <div
-                class="pointer-events-none absolute -top-6 left-0 z-20 hidden group-hover:flex items-center px-2 py-1 rounded-md bg-zinc-900 text-zinc-200 dark:bg-[#1f1b2e] dark:text-zinc-100 text-[10px] font-mono border border-zinc-700 dark:border-[#2f273d] shadow-lg whitespace-nowrap"
-              >
-                # Reads background and current technical focus
-              </div>
+              <span class="text-rose-600 dark:text-rose-400 font-bold">$</span>
+              <span>cat ~/about/bio.txt</span>
             </div>
 
             <p class="text-zinc-700 dark:text-zinc-300 text-sm leading-relaxed">
@@ -80,18 +70,10 @@ const { t } = useI18n()
             <div
               class="flex items-center justify-between pb-2 border-b border-zinc-100 dark:border-[#262035] font-mono text-xs"
             >
-              <div class="relative inline-flex items-center group">
-                <span class="text-zinc-500 dark:text-zinc-400 cursor-help">
-                  <span class="text-rose-600 dark:text-rose-400 font-bold">$</span>
-                  {{ t.experience.subheading }}
-                </span>
-                <!-- Tooltip -->
-                <div
-                  class="pointer-events-none absolute -top-7 left-0 z-20 hidden group-hover:flex items-center px-2 py-1 rounded-md bg-zinc-900 text-zinc-200 dark:bg-[#1f1b2e] dark:text-zinc-100 text-[10px] font-mono border border-zinc-700 dark:border-[#2f273d] shadow-lg whitespace-nowrap"
-                >
-                  # Shows career history and milestones as commits
-                </div>
-              </div>
+              <span class="text-zinc-500 dark:text-zinc-400">
+                <span class="text-rose-600 dark:text-rose-400 font-bold">$</span>
+                {{ t.experience.subheading }}
+              </span>
               <span class="text-[11px] text-sky-600 dark:text-sky-400 font-semibold"
                 >branch: main</span
               >

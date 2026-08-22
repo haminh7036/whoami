@@ -51,26 +51,15 @@ async function copyEmail() {
 
       <!-- Terminal Body Content -->
       <div class="p-6 sm:p-10 space-y-8">
-        <!-- Prompt Line with Tooltip -->
-        <div class="relative inline-flex items-center group">
-          <div
-            class="font-mono text-xs sm:text-sm flex flex-wrap items-center gap-2 text-zinc-500 dark:text-zinc-400 cursor-help"
-          >
-            <span class="text-rose-600 dark:text-rose-400 font-bold">minh@arch-linux</span>
-            <span class="text-zinc-400">:</span>
-            <span class="text-sky-600 dark:text-sky-400 font-semibold">~</span>
-            <span class="text-zinc-400">$</span>
-            <span class="text-zinc-900 dark:text-zinc-100 font-medium"
-              >whoami --stack --verbose</span
-            >
-          </div>
-
-          <!-- Tooltip -->
-          <div
-            class="pointer-events-none absolute -top-8 left-0 z-20 hidden group-hover:flex items-center px-2 py-1 rounded-md bg-zinc-900 text-zinc-200 dark:bg-[#1f1b2e] dark:text-zinc-100 text-[10px] font-mono border border-zinc-700 dark:border-[#2f273d] shadow-lg whitespace-nowrap"
-          >
-            # Prints identity, bio, and system specs
-          </div>
+        <!-- Prompt Line -->
+        <div
+          class="font-mono text-xs sm:text-sm flex flex-wrap items-center gap-2 text-zinc-500 dark:text-zinc-400"
+        >
+          <span class="text-rose-600 dark:text-rose-400 font-bold">minh@arch-linux</span>
+          <span class="text-zinc-400">:</span>
+          <span class="text-sky-600 dark:text-sky-400 font-semibold">~</span>
+          <span class="text-zinc-400">$</span>
+          <span class="text-zinc-900 dark:text-zinc-100 font-medium">whoami --stack --verbose</span>
         </div>
 
         <!-- Main Hero Intro -->

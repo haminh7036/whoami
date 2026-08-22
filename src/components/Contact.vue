@@ -38,18 +38,10 @@ async function copyEmail() {
           <Terminal class="w-3.5 h-3.5" />
           <span>{{ t.contact.sectionNumber }}</span>
         </div>
-        <div class="relative inline-flex items-center group">
-          <p class="font-mono text-xs text-zinc-500 dark:text-zinc-400 cursor-help">
-            <span class="text-rose-600 dark:text-rose-400 font-bold">$</span>
-            {{ t.contact.subheading }}
-          </p>
-          <!-- Tooltip -->
-          <div
-            class="pointer-events-none absolute -top-7 left-1/2 -translate-x-1/2 z-20 hidden group-hover:flex items-center px-2 py-1 rounded-md bg-zinc-900 text-zinc-200 dark:bg-[#1f1b2e] dark:text-zinc-100 text-[10px] font-mono border border-zinc-700 dark:border-[#2f273d] shadow-lg whitespace-nowrap"
-          >
-            # Opens communication channel
-          </div>
-        </div>
+        <p class="font-mono text-xs text-zinc-500 dark:text-zinc-400">
+          <span class="text-rose-600 dark:text-rose-400 font-bold">$</span>
+          {{ t.contact.subheading }}
+        </p>
       </div>
 
       <p class="text-zinc-600 dark:text-zinc-400 text-sm sm:text-base leading-relaxed">
