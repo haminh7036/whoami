@@ -2,8 +2,8 @@
 export const profile = {
   name: 'Ha Minh',
   handle: '@haminh7036',
-  title: 'Backend & Systems Engineer (PHP/Laravel → Go & K3s)',
-  bio: 'Backend engineer with a solid foundation in PHP, Laravel & MySQL, currently diving deep into Go, PostgreSQL, and cloud-native Kubernetes (K3s). Passionate Linux enthusiast living in Neovim, Fish Shell, and Ghostty.',
+  title: 'Backend Developer (PHP & Go)',
+  bio: 'Backend developer with experience in PHP (Laravel) & MySQL, currently learning Golang, PostgreSQL, and K3s. Daily Linux user on Arch & CachyOS with Neovim, Fish Shell, and Ghostty.',
   location: 'Vietnam',
   avatar: 'https://github.com/haminh7036.png',
   socials: {
