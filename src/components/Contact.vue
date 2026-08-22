@@ -9,12 +9,16 @@ import LinkedinIcon from './icons/LinkedinIcon.vue'
 const { t } = useI18n()
 const copied = ref(false)
 
-function copyEmail() {
-  navigator.clipboard.writeText('contact@haminh.dev')
-  copied.value = true
-  setTimeout(() => {
-    copied.value = false
-  }, 2000)
+async function copyEmail() {
+  try {
+    await navigator.clipboard.writeText('contact@haminh.dev')
+    copied.value = true
+    setTimeout(() => {
+      copied.value = false
+    }, 2000)
+  } catch {
+    // Graceful fallback for restricted clipboard permissions
+  }
 }
 </script>
 

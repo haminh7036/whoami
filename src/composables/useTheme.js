@@ -7,7 +7,7 @@ function getInitialTheme() {
   if (saved === 'light' || saved === 'dark') {
     return saved
   }
-  return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'dark' // default dark
+  return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'
 }
 
 const theme = ref(getInitialTheme())

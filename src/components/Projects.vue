@@ -7,11 +7,14 @@ import GithubIcon from './icons/GithubIcon.vue'
 const { t } = useI18n()
 const activeCategory = ref('All')
 
+const categories = computed(() => {
+  const cats = new Set(t.value.projects.items.map((p) => p.category))
+  return ['All', ...Array.from(cats)]
+})
+
 const filteredProjects = computed(() => {
   if (activeCategory.value === 'All') return t.value.projects.items
-  return t.value.projects.items.filter((p) =>
-    p.category.toLowerCase().includes(activeCategory.value.toLowerCase())
-  )
+  return t.value.projects.items.filter((p) => p.category === activeCategory.value)
 })
 </script>
 
@@ -44,7 +47,7 @@ const filteredProjects = computed(() => {
           class="flex items-center gap-1.5 p-1 rounded-xl bg-zinc-100 dark:bg-[#161422] border border-zinc-200 dark:border-[#2f273d] self-start md:self-auto font-mono text-xs"
         >
           <button
-            v-for="cat in ['All', 'Frontend', 'Backend']"
+            v-for="cat in categories"
             :key="cat"
             class="px-3 py-1.5 rounded-lg transition-colors cursor-pointer"
             :class="
@@ -54,13 +57,7 @@ const filteredProjects = computed(() => {
             "
             @click="activeCategory = cat"
           >
-            {{
-              cat === 'All'
-                ? t.projects.filterAll
-                : cat === 'Frontend'
-                  ? t.projects.filterFrontend
-                  : t.projects.filterBackend
-            }}
+            {{ cat }}
           </button>
         </div>
       </div>

@@ -62,9 +62,6 @@ export const translations = {
       sectionNumber: '02. FEATURED WORK',
       heading: 'Projects & Repositories',
       subheading: 'ls -la ~/projects',
-      filterAll: 'All',
-      filterFrontend: 'Backend & APIs',
-      filterBackend: 'Go & Cloud-Native',
       viewSource: 'Source Code',
       liveDemo: 'Live Demo',
       items: [
