@@ -42,6 +42,7 @@ async function copyEmail() {
           {{ t.contact.heading }}
         </h2>
         <p class="font-mono text-xs text-zinc-500 dark:text-zinc-400">
+          <span class="text-rose-600 dark:text-rose-400 font-bold">$</span>
           {{ t.contact.subheading }}
         </p>
       </div>

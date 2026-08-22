@@ -3,9 +3,9 @@ export const translations = {
   en: {
     nav: {
       about: 'About',
+      experience: 'Experience',
       projects: 'Projects',
       skills: 'Skills',
-      experience: 'Experience',
       contact: 'Contact',
       terminal: 'Terminal'
     },
@@ -32,6 +32,7 @@ export const translations = {
     about: {
       sectionNumber: '01. ABOUT',
       heading: 'About Me',
+      subheading: 'cat ~/about/bio.txt',
       p1: 'I am a backend developer with experience building web APIs and managing databases using PHP, Laravel, and MySQL.',
       p2: 'I am currently expanding my skills with Golang, PostgreSQL, and container orchestration using K3s. For my daily development setup, I use Arch Linux (with niri) on PC and CachyOS (with GNOME) on laptop, using Ghostty, Fish Shell, and Neovim.',
       coreValuesTitle: 'Development Focus',
@@ -40,7 +41,7 @@ export const translations = {
     },
     experience: {
       heading: 'Work & Learning Timeline',
-      subheading: 'Career history',
+      subheading: 'git log --oneline',
       items: [
         {
           period: 'Present',
@@ -61,7 +62,7 @@ export const translations = {
     projects: {
       sectionNumber: '02. PROJECTS',
       heading: 'Projects & Work',
-      subheading: 'Company work (private) and open-source hobby projects',
+      subheading: 'ls -la ~/projects',
       privateBadge: 'Private / Company',
       publicBadge: 'Open Source',
       viewSource: 'Source',
@@ -135,7 +136,7 @@ export const translations = {
     skills: {
       sectionNumber: '03. SKILLS',
       heading: 'Skills & Tools',
-      subheading: 'Technologies used in daily work and projects',
+      subheading: 'tree ~/skills',
       categories: [
         {
           name: 'Backend & Databases',
@@ -160,7 +161,7 @@ export const translations = {
     contact: {
       sectionNumber: '04. CONTACT',
       heading: 'Get in Touch',
-      subheading: 'Reach out via email or social links',
+      subheading: 'ssh contact@haminh.dev',
       intro:
         'If you have an opportunity, project question, or just want to connect about PHP, Go, or Linux setups, feel free to send an email.',
       sendEmail: 'Send Email',
