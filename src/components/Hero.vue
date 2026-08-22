@@ -32,7 +32,7 @@ function copyEmail() {
           <span class="w-3 h-3 rounded-full bg-amber-500/90 inline-block"></span>
           <span class="w-3 h-3 rounded-full bg-sky-500/90 inline-block"></span>
           <span class="ml-2 font-semibold text-zinc-700 dark:text-zinc-300"
-            >haminh@arch-niri: ~</span
+            >minh@arch-linux: ~</span
           >
         </div>
         <div class="flex items-center gap-3">
