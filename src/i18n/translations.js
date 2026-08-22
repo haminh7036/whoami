@@ -25,7 +25,7 @@ export const translations = {
       shell: 'fish shell',
       term: 'Ghostty',
       editor: 'Neovim',
-      wm: 'niri / GNOME',
+      wm: 'Wayland (niri / GNOME)',
       uptime: '99.9% uptime',
       focus: 'Laravel → Go & K3s'
     },
@@ -33,7 +33,7 @@ export const translations = {
       sectionNumber: '01. ABOUT & BACKGROUND',
       heading: 'System Info & Tech Journey',
       p1: 'I am a backend-focused software engineer with hands-on experience in building scalable web APIs and reliable database architectures with PHP (Laravel) and MySQL.',
-      p2: 'Currently expanding my engineering horizon into Golang, PostgreSQL, and cloud-native container orchestration with K3s. My daily workflow runs on Arch Linux (niri) and CachyOS (GNOME), powered by Ghostty, Fish Shell, and Neovim.',
+      p2: 'Currently expanding my engineering horizon into Golang, PostgreSQL, and cloud-native container orchestration with K3s. My daily workflow runs on pure Wayland (niri on Arch, GNOME on CachyOS), powered by Ghostty, Fish Shell, and Neovim.',
       coreValuesTitle: 'Engineering Philosophy',
       coreValues:
         'Clean architecture, pragmatic design, type safety, low latency, and uncompromising developer ergonomics.'
@@ -139,7 +139,7 @@ export const translations = {
         },
         {
           name: 'Environment & Workflow',
-          items: ['Neovim (Lua)', 'Ghostty Terminal', 'Fish Shell', 'niri (Wayland)', 'GNOME']
+          items: ['Neovim (Lua)', 'Ghostty Terminal', 'Fish Shell', 'Wayland (niri & GNOME)']
         }
       ]
     },
