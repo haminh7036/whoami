@@ -36,7 +36,7 @@ function copyEmail() {
           >
         </div>
         <div class="flex items-center gap-3">
-          <span class="hidden sm:inline-block">ghostty + fish</span>
+          <span class="hidden sm:inline-block">fish</span>
           <span
             class="px-2 py-0.5 rounded-md bg-rose-500/10 text-rose-700 dark:text-rose-400 border border-rose-500/20 text-[11px]"
           >
@@ -51,7 +51,7 @@ function copyEmail() {
         <div
           class="font-mono text-xs sm:text-sm flex flex-wrap items-center gap-2 text-zinc-500 dark:text-zinc-400"
         >
-          <span class="text-rose-600 dark:text-rose-400 font-bold">minh@arch</span>
+          <span class="text-rose-600 dark:text-rose-400 font-bold">minh@arch-linux</span>
           <span class="text-zinc-400">:</span>
           <span class="text-sky-600 dark:text-sky-400 font-semibold">~</span>
           <span class="text-zinc-400">$</span>
@@ -148,7 +148,7 @@ function copyEmail() {
                 <img
                   :src="profile.avatar"
                   :alt="profile.name"
-                  class="w-full h-full object-cover grayscale contrast-110 group-hover:grayscale-0 transition-all duration-300"
+                  class="w-full h-full object-cover transition-all duration-300"
                   loading="lazy"
                 />
               </div>
