@@ -8,7 +8,7 @@ const { t } = useI18n()
 <template>
   <section
     id="about"
-    class="py-16 px-4 sm:px-6 max-w-6xl mx-auto border-t border-zinc-200/80 dark:border-[#2f273d]/80 transition-colors duration-200"
+    class="py-16 px-4 sm:px-6 max-w-6xl mx-auto border-t border-zinc-200/80 dark:border-[#2f273d]/80 transition-colors duration-200 scroll-mt-20"
   >
     <div class="space-y-10">
       <!-- Section Header -->
@@ -63,7 +63,7 @@ const { t } = useI18n()
         </div>
 
         <!-- Right: Career Timeline as Git Log -->
-        <div id="experience" class="lg:col-span-6 space-y-4">
+        <div id="experience" class="lg:col-span-6 space-y-4 scroll-mt-20">
           <div
             class="p-6 rounded-2xl bg-white dark:bg-[#161422] border border-zinc-200 dark:border-[#2f273d] shadow-sm space-y-6"
           >

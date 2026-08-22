@@ -25,7 +25,7 @@ async function copyEmail() {
 <template>
   <section
     id="contact"
-    class="py-16 px-4 sm:px-6 max-w-6xl mx-auto border-t border-zinc-200/80 dark:border-[#2f273d]/80 text-center transition-colors duration-200"
+    class="py-16 px-4 sm:px-6 max-w-6xl mx-auto border-t border-zinc-200/80 dark:border-[#2f273d]/80 text-center transition-colors duration-200 scroll-mt-20"
   >
     <div
       class="max-w-2xl mx-auto p-8 sm:p-12 rounded-3xl bg-white dark:bg-[#161422] border border-zinc-200 dark:border-[#2f273d] shadow-sm space-y-8"

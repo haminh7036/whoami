@@ -36,17 +36,17 @@ const isOpen = ref(false)
         <a href="#about" class="hover:text-rose-600 dark:hover:text-rose-400 transition-colors">
           {{ t.nav.about }}
         </a>
-        <a href="#projects" class="hover:text-rose-600 dark:hover:text-rose-400 transition-colors">
-          {{ t.nav.projects }}
-        </a>
-        <a href="#skills" class="hover:text-rose-600 dark:hover:text-rose-400 transition-colors">
-          {{ t.nav.skills }}
-        </a>
         <a
           href="#experience"
           class="hover:text-rose-600 dark:hover:text-rose-400 transition-colors"
         >
           {{ t.nav.experience }}
+        </a>
+        <a href="#projects" class="hover:text-rose-600 dark:hover:text-rose-400 transition-colors">
+          {{ t.nav.projects }}
+        </a>
+        <a href="#skills" class="hover:text-rose-600 dark:hover:text-rose-400 transition-colors">
+          {{ t.nav.skills }}
         </a>
         <a href="#contact" class="hover:text-rose-600 dark:hover:text-rose-400 transition-colors">
           {{ t.nav.contact }}
@@ -96,9 +96,9 @@ const isOpen = ref(false)
       <a
         v-for="link in [
           { name: t.nav.about, href: '#about' },
+          { name: t.nav.experience, href: '#experience' },
           { name: t.nav.projects, href: '#projects' },
           { name: t.nav.skills, href: '#skills' },
-          { name: t.nav.experience, href: '#experience' },
           { name: t.nav.contact, href: '#contact' }
         ]"
         :key="link.name"

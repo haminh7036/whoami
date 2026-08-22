@@ -14,7 +14,7 @@ function getCategoryIcon(idx) {
 <template>
   <section
     id="skills"
-    class="py-16 px-4 sm:px-6 max-w-6xl mx-auto border-t border-zinc-200/80 dark:border-[#2f273d]/80 transition-colors duration-200"
+    class="py-16 px-4 sm:px-6 max-w-6xl mx-auto border-t border-zinc-200/80 dark:border-[#2f273d]/80 transition-colors duration-200 scroll-mt-20"
   >
     <div class="space-y-8">
       <!-- Section Header -->
