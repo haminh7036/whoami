@@ -1,9 +1,9 @@
-// ponytail: Global profile metadata. If multi-user or CMS needed later, migrate to dynamic fetch.
+// ponytail: Global profile metadata.
 export const profile = {
   name: 'Ha Minh',
   handle: '@haminh7036',
-  title: 'Software Engineer & Systems Enthusiast',
-  bio: 'Passionate about building performant web applications, clean architectures, and Linux-driven workflows. Crafting software with precision, accessibility, and speed.',
+  title: 'Backend & Systems Engineer (PHP/Laravel → Go & K3s)',
+  bio: 'Backend engineer with a solid foundation in PHP, Laravel & MySQL, currently diving deep into Go, PostgreSQL, and cloud-native Kubernetes (K3s). Passionate Linux enthusiast living in Neovim, Fish Shell, and Ghostty.',
   location: 'Vietnam',
   avatar: 'https://github.com/haminh7036.png',
   socials: {

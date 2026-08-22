@@ -12,8 +12,8 @@ export const translations = {
     hero: {
       status: 'Available for new opportunities',
       greeting: "Hi, I'm",
-      title: 'Software Engineer & Systems Enthusiast',
-      bio: 'Passionate about building performant web applications, clean architectures, and Linux-driven workflows. Crafting software with precision, accessibility, and speed.',
+      title: 'Backend Engineer (Laravel → Go & K3s)',
+      bio: 'Backend developer with solid foundations in PHP, Laravel & MySQL, actively mastering Go, PostgreSQL, and cloud-native Kubernetes (K3s). Devoted Linux craftsman living inside Neovim, Fish Shell, and Ghostty.',
       location: 'Vietnam',
       viewProjects: 'View Projects',
       getInTouch: 'Get in Touch',
@@ -21,38 +21,40 @@ export const translations = {
       emailCopied: 'Email copied!'
     },
     sysinfo: {
-      os: 'Linux x86_64',
-      shell: 'zsh + tmux',
-      editor: 'Neovim / VS Code',
+      os: 'Arch Linux / CachyOS',
+      shell: 'fish shell',
+      term: 'Ghostty',
+      editor: 'Neovim',
+      wm: 'niri / GNOME',
       uptime: '99.9% uptime',
-      focus: 'Full-Stack & Systems'
+      focus: 'Laravel → Go & K3s'
     },
     about: {
       sectionNumber: '01. ABOUT & BACKGROUND',
-      heading: 'System Info & Philosophy',
-      p1: 'I am a software engineer focused on building robust, scalable web applications and high-quality user experiences. I enjoy solving complex engineering challenges, optimizing system performance, and automating workflows.',
-      p2: 'Deeply interested in modern frontend frameworks, distributed backends, and Unix philosophy—building small, composable, and purpose-driven tools.',
-      coreValuesTitle: 'Core Philosophy',
+      heading: 'System Info & Tech Journey',
+      p1: 'I am a backend-focused software engineer with hands-on experience in building scalable web APIs and reliable database architectures with PHP (Laravel) and MySQL.',
+      p2: 'Currently expanding my engineering horizon into Golang, PostgreSQL, and cloud-native container orchestration with K3s. My daily workflow runs on Arch Linux (niri) and CachyOS (GNOME), powered by Ghostty, Fish Shell, and Neovim.',
+      coreValuesTitle: 'Engineering Philosophy',
       coreValues:
-        'Correctness, simplicity, low latency, maintainable code, and high developer ergonomics.'
+        'Clean architecture, pragmatic design, type safety, low latency, and uncompromising developer ergonomics.'
     },
     experience: {
-      heading: 'Career Timeline',
+      heading: 'Career & Growth Timeline',
       subheading: 'git log --oneline --graph',
       items: [
         {
-          period: '2024 - Present',
-          role: 'Software Engineer',
-          company: 'Tech Company',
+          period: 'Present',
+          role: 'Backend & Systems Explorer',
+          company: 'Self-Directed / Homelab',
           description:
-            'Designing scalable microservices and reactive frontend interfaces. Leading frontend architecture and developer experience optimizations.'
+            'Building cloud-native microservices in Go, provisioning lightweight Kubernetes clusters (K3s), and optimizing Linux workflows.'
         },
         {
-          period: '2022 - 2024',
-          role: 'Full-Stack Developer',
-          company: 'Software House',
+          period: '2023 - 2025',
+          role: 'PHP / Laravel Developer',
+          company: 'Software Company',
           description:
-            'Engineered responsive web applications and RESTful APIs. Collaborated on CI/CD automation pipelines and cloud deployment.'
+            'Engineered RESTful APIs, database schema design, and background job queues with Laravel & MySQL. Collaborated on frontend integration and automated deployments.'
         }
       ]
     },
@@ -61,65 +63,83 @@ export const translations = {
       heading: 'Projects & Repositories',
       subheading: 'ls -la ~/projects',
       filterAll: 'All',
-      filterFrontend: 'Frontend',
-      filterBackend: 'Backend / Systems',
+      filterFrontend: 'Backend & APIs',
+      filterBackend: 'Go & Cloud-Native',
       viewSource: 'Source Code',
       liveDemo: 'Live Demo',
       items: [
         {
           id: 'whoami',
-          title: 'whoami',
+          title: 'whoami - Personal Portfolio',
           description:
-            'A minimalist, Linux-inspired personal portfolio with multi-language and gentle eye-care theme support.',
-          tags: ['Vue 3', 'Tailwind CSS', 'Vite', 'i18n'],
-          category: 'Frontend',
+            'Minimalist, Linux-inspired portfolio built with Vue 3, Vite, and Tailwind CSS with Carlotta-inspired theme.',
+          tags: ['Vue 3', 'Tailwind CSS', 'Vite'],
+          category: 'Backend & APIs',
           github: 'https://github.com/haminh7036/whoami',
           demo: 'https://haminh.dev',
           featured: true,
           stars: 12
         },
         {
-          id: 'dotfiles',
-          title: 'dotfiles & dev environment',
+          id: 'go-microservice',
+          title: 'Go Cloud Microservice',
           description:
-            'Optimized configurations for Zsh, Neovim, Tmux, and Linux development toolchains.',
-          tags: ['Bash', 'Lua', 'Linux', 'Neovim'],
-          category: 'Backend / Systems',
+            'High-performance HTTP/gRPC service written in Golang with PostgreSQL, Redis cache, and K3s manifest deployment.',
+          tags: ['Go', 'PostgreSQL', 'K3s', 'Docker'],
+          category: 'Go & Cloud-Native',
           github: 'https://github.com/haminh7036',
           demo: '',
           featured: true,
-          stars: 28
+          stars: 34
         },
         {
-          id: 'cloud-cli',
-          title: 'Cloud Infrastructure CLI',
+          id: 'laravel-api',
+          title: 'Laravel Clean Architecture API',
           description:
-            'High-performance CLI utility written in Go for managing container clusters and remote services.',
-          tags: ['Go', 'Docker', 'CLI', 'Linux'],
-          category: 'Backend / Systems',
+            'Modular RESTful API boilerplates built with Laravel 11, MySQL, Redis queues, and JWT authentication.',
+          tags: ['PHP', 'Laravel', 'MySQL', 'Redis'],
+          category: 'Backend & APIs',
           github: 'https://github.com/haminh7036',
           demo: '',
           featured: false,
-          stars: 45
+          stars: 25
+        },
+        {
+          id: 'dotfiles',
+          title: 'Linux Dotfiles (niri + Ghostty + Neovim)',
+          description:
+            'Personal dotfiles for Arch Linux (niri scrollable-tiling), CachyOS, Fish Shell, Ghostty terminal, and custom Lua Neovim config.',
+          tags: ['Linux', 'Neovim', 'Fish', 'Lua'],
+          category: 'Go & Cloud-Native',
+          github: 'https://github.com/haminh7036',
+          demo: '',
+          featured: false,
+          stars: 48
         }
       ]
     },
     skills: {
       sectionNumber: '03. SKILLS & TOOLCHAIN',
-      heading: 'Technical Arsenal',
+      heading: 'Technical Stack',
       subheading: 'tree --dirs-only ~/skills',
       categories: [
         {
-          name: 'Languages',
-          items: ['TypeScript', 'JavaScript', 'Go', 'Python', 'HTML5 / CSS3', 'Bash / Shell']
+          name: 'Backend & Core',
+          items: ['PHP / Laravel', 'Golang (Go)', 'MySQL', 'PostgreSQL', 'RESTful APIs', 'Redis']
         },
         {
-          name: 'Frameworks & UI',
-          items: ['Vue.js 3', 'React', 'Next.js', 'Tailwind CSS', 'Vite', 'Node.js']
+          name: 'Cloud-Native & DevOps',
+          items: [
+            'K3s (Kubernetes)',
+            'Docker',
+            'Linux (Arch & CachyOS)',
+            'Git / GitHub CI',
+            'Nginx'
+          ]
         },
         {
-          name: 'Systems & DevOps',
-          items: ['Linux / POSIX', 'Docker', 'Git', 'PostgreSQL', 'Redis', 'CI/CD Actions']
+          name: 'Environment & Workflow',
+          items: ['Neovim (Lua)', 'Ghostty Terminal', 'Fish Shell', 'niri (Wayland)', 'GNOME']
         }
       ]
     },
@@ -128,7 +148,7 @@ export const translations = {
       heading: 'Initialize Connection',
       subheading: '$ ssh contact@haminh.dev',
       intro:
-        'Have an opportunity, project proposal, or just want to discuss tech & Linux? My inbox is always open.',
+        'Interested in discussing Laravel, Go, Kubernetes (K3s), or Linux rice setups? My inbox is always open.',
       sendEmail: 'Send Email',
       copyAddress: 'Copy Address',
       github: 'GitHub',
@@ -137,7 +157,7 @@ export const translations = {
     footer: {
       rights: 'All rights reserved.',
       builtWith: 'Built with Vue 3, Vite & Tailwind CSS',
-      kernel: 'kernel: linux-6.x | prompt: ~$'
+      kernel: 'arch-linux + cachyos | fish shell | ghostty'
     }
   }
 }

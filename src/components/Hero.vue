@@ -32,11 +32,11 @@ function copyEmail() {
           <span class="w-3 h-3 rounded-full bg-amber-500/90 inline-block"></span>
           <span class="w-3 h-3 rounded-full bg-sky-500/90 inline-block"></span>
           <span class="ml-2 font-semibold text-zinc-700 dark:text-zinc-300"
-            >haminh@arch-linux: ~</span
+            >haminh@arch-niri: ~</span
           >
         </div>
         <div class="flex items-center gap-3">
-          <span class="hidden sm:inline-block">bash 5.2</span>
+          <span class="hidden sm:inline-block">ghostty + fish</span>
           <span
             class="px-2 py-0.5 rounded-md bg-rose-500/10 text-rose-700 dark:text-rose-400 border border-rose-500/20 text-[11px]"
           >
@@ -51,13 +51,11 @@ function copyEmail() {
         <div
           class="font-mono text-xs sm:text-sm flex flex-wrap items-center gap-2 text-zinc-500 dark:text-zinc-400"
         >
-          <span class="text-rose-600 dark:text-rose-400 font-bold">user@arch</span>
+          <span class="text-rose-600 dark:text-rose-400 font-bold">minh@arch</span>
           <span class="text-zinc-400">:</span>
           <span class="text-sky-600 dark:text-sky-400 font-semibold">~</span>
           <span class="text-zinc-400">$</span>
-          <span class="text-zinc-900 dark:text-zinc-100 font-medium"
-            >whoami --profile --verbose</span
-          >
+          <span class="text-zinc-900 dark:text-zinc-100 font-medium">whoami --stack --verbose</span>
         </div>
 
         <!-- Main Hero Intro -->
@@ -158,11 +156,15 @@ function copyEmail() {
 
             <!-- Neofetch stats -->
             <div
-              class="mt-4 w-full sm:w-48 p-3 rounded-xl bg-zinc-50 dark:bg-[#1d1a2c]/80 border border-zinc-200 dark:border-[#2f273d] font-mono text-[11px] text-zinc-600 dark:text-zinc-400 space-y-1"
+              class="mt-4 w-full sm:w-56 p-3.5 rounded-xl bg-zinc-50 dark:bg-[#1d1a2c]/80 border border-zinc-200 dark:border-[#2f273d] font-mono text-[11px] text-zinc-600 dark:text-zinc-400 space-y-1.5"
             >
               <div class="flex justify-between">
                 <span class="text-zinc-400 dark:text-zinc-500">OS:</span>
                 <span class="text-zinc-800 dark:text-zinc-200 font-medium">{{ t.sysinfo.os }}</span>
+              </div>
+              <div class="flex justify-between">
+                <span class="text-zinc-400 dark:text-zinc-500">WM/DE:</span>
+                <span class="text-zinc-800 dark:text-zinc-200 font-medium">{{ t.sysinfo.wm }}</span>
               </div>
               <div class="flex justify-between">
                 <span class="text-zinc-400 dark:text-zinc-500">Shell:</span>
@@ -171,10 +173,10 @@ function copyEmail() {
                 }}</span>
               </div>
               <div class="flex justify-between">
-                <span class="text-zinc-400 dark:text-zinc-500">Uptime:</span>
-                <span class="text-rose-600 dark:text-rose-400 font-semibold">{{
-                  t.sysinfo.uptime
-                }}</span>
+                <span class="text-zinc-400 dark:text-zinc-500">Term/Editor:</span>
+                <span class="text-zinc-800 dark:text-zinc-200 font-medium"
+                  >{{ t.sysinfo.term }} / {{ t.sysinfo.editor }}</span
+                >
               </div>
             </div>
           </div>
