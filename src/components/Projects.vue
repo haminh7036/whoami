@@ -1,7 +1,7 @@
 <script setup>
 import { ref, computed } from 'vue'
 import { useI18n } from '../composables/useI18n.js'
-import { FolderGit2, ExternalLink, Terminal, Star } from '@lucide/vue'
+import { FolderGit2, ExternalLink, Terminal, Star, Lock } from '@lucide/vue'
 import GithubIcon from './icons/GithubIcon.vue'
 
 const { t } = useI18n()
@@ -70,9 +70,22 @@ const filteredProjects = computed(() => {
           class="flex flex-col justify-between p-6 rounded-2xl bg-white dark:bg-[#161422] border border-zinc-200 dark:border-[#2f273d] hover:border-rose-300 dark:hover:border-rose-800/80 shadow-sm hover:shadow-md transition-all duration-200 group"
         >
           <div class="space-y-4">
-            <!-- Card Header: Linux permission style & links -->
+            <!-- Card Header: Permission/Visibility badge & links -->
             <div class="flex items-center justify-between font-mono text-xs">
-              <span class="text-[11px] text-zinc-400 dark:text-zinc-500"> -rwxr-xr-x </span>
+              <div class="flex items-center gap-2">
+                <span class="text-[11px] text-zinc-400 dark:text-zinc-500">
+                  {{ project.private ? '-r--------' : '-rwxr-xr-x' }}
+                </span>
+                <span
+                  v-if="project.private"
+                  class="inline-flex items-center gap-1 text-[10px] px-2 py-0.5 rounded bg-zinc-100 dark:bg-[#1f1b2e] text-zinc-600 dark:text-zinc-400 border border-zinc-200 dark:border-[#2f273d]"
+                >
+                  <Lock class="w-2.5 h-2.5" />
+                  <span>Private</span>
+                </span>
+              </div>
+
+              <!-- Action Links (Only shown for public / available links) -->
               <div class="flex items-center gap-2.5 text-zinc-500 dark:text-zinc-400">
                 <span v-if="project.stars" class="flex items-center gap-1 text-[11px]">
                   <Star class="w-3 h-3 text-amber-500 fill-amber-500" />

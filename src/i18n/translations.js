@@ -44,10 +44,10 @@ export const translations = {
       items: [
         {
           period: 'Present',
-          role: 'Self-Learning & Projects',
+          role: 'Self-Learning & Practice',
           company: 'Personal Projects',
           description:
-            'Practicing Go, building small microservices, and testing K3s cluster deployments in a local environment.'
+            'Practicing Go, building small backend microservices, and testing K3s cluster deployments in a local environment.'
         },
         {
           period: '2023 - 2025',
@@ -60,54 +60,71 @@ export const translations = {
     },
     projects: {
       sectionNumber: '02. PROJECTS',
-      heading: 'Featured Projects',
-      subheading: 'Personal & open-source work',
+      heading: 'Projects & Work',
+      subheading: 'Company work (private) and open-source hobby projects',
+      privateBadge: 'Private / Company',
+      publicBadge: 'Open Source',
       viewSource: 'Source',
       liveDemo: 'Demo',
       items: [
         {
+          id: 'company-api',
+          title: 'Backend Services & APIs',
+          description:
+            'RESTful APIs, database schema design, and asynchronous queue processing built with Laravel and MySQL for company products.',
+          tags: ['PHP', 'Laravel', 'MySQL', 'Redis'],
+          category: 'Company Work',
+          private: true,
+          github: '',
+          demo: '',
+          featured: true
+        },
+        {
+          id: 'internal-portal',
+          title: 'Internal Operations Portal',
+          description:
+            'Internal management system and API integrations supporting company workflows and data administration.',
+          tags: ['Laravel', 'Vue.js', 'REST API', 'MySQL'],
+          category: 'Company Work',
+          private: true,
+          github: '',
+          demo: '',
+          featured: false
+        },
+        {
           id: 'whoami',
           title: 'whoami - Personal Portfolio',
           description:
-            'Minimalist, Linux-inspired portfolio website built with Vue 3, Vite, and Tailwind CSS.',
+            'Minimalist, Linux-inspired personal portfolio website built with Vue 3, Vite, and Tailwind CSS.',
           tags: ['Vue 3', 'Tailwind CSS', 'Vite'],
-          category: 'Web',
+          category: 'Hobby & Personal',
+          private: false,
           github: 'https://github.com/haminh7036/whoami',
           demo: 'https://haminh.dev',
           featured: true,
           stars: 12
         },
         {
-          id: 'go-microservice',
-          title: 'Go Backend Service',
+          id: 'go-playground',
+          title: 'Go Backend Playground',
           description:
-            'Backend API service written in Golang with PostgreSQL, Redis caching, and Docker/K3s deployment configs.',
-          tags: ['Go', 'PostgreSQL', 'K3s', 'Docker'],
-          category: 'Go & DevOps',
+            'Toy and practice repository exploring Go HTTP services, PostgreSQL connection pooling, and Docker/K3s deployment configs.',
+          tags: ['Go', 'PostgreSQL', 'Docker', 'K3s'],
+          category: 'Hobby & Personal',
+          private: false,
           github: 'https://github.com/haminh7036',
           demo: '',
           featured: true,
-          stars: 34
-        },
-        {
-          id: 'laravel-api',
-          title: 'Laravel REST API',
-          description:
-            'RESTful API project built with Laravel, MySQL database design, Redis queues, and JWT authentication.',
-          tags: ['PHP', 'Laravel', 'MySQL', 'Redis'],
-          category: 'Laravel & PHP',
-          github: 'https://github.com/haminh7036',
-          demo: '',
-          featured: false,
-          stars: 25
+          stars: 18
         },
         {
           id: 'dotfiles',
           title: 'Linux Dotfiles',
           description:
-            'Personal dotfiles and configs for Arch Linux (niri), CachyOS (GNOME), Fish Shell, Ghostty, and Neovim.',
+            'Personal configuration files for Arch Linux (niri), CachyOS (GNOME), Fish Shell, Ghostty terminal, and Neovim.',
           tags: ['Linux', 'Neovim', 'Fish', 'Lua'],
-          category: 'Linux & Configs',
+          category: 'Hobby & Personal',
+          private: false,
           github: 'https://github.com/haminh7036',
           demo: '',
           featured: false,
