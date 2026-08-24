@@ -12,7 +12,7 @@ export const translations = {
     hero: {
       status: 'Open to opportunities',
       greeting: "Hi, I'm",
-      title: 'Backend Developer (PHP & Go)',
+      title: 'Backend Developer',
       bio: 'Backend developer with practical experience in PHP (Laravel) & MySQL, currently learning Golang, PostgreSQL, and K3s. Daily Linux user on Arch Linux & CachyOS with Neovim, Fish Shell, and Ghostty.',
       location: 'Vietnam',
       viewProjects: 'View Projects',
