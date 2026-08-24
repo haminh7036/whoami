@@ -1,6 +1,6 @@
 <script setup>
 import { useI18n } from '../composables/useI18n.js'
-import { Terminal, HeartHandshake } from '@lucide/vue'
+import { Terminal, GitPullRequest } from '@lucide/vue'
 
 const { t } = useI18n()
 </script>
@@ -46,14 +46,14 @@ const { t } = useI18n()
             </p>
           </div>
 
-          <!-- Philosophy Card -->
+          <!-- Motivation & Community Card -->
           <div
             class="p-5 rounded-2xl bg-zinc-50 dark:bg-[#161422]/70 border border-zinc-200 dark:border-[#2f273d] space-y-2"
           >
             <h4
               class="text-xs font-mono font-semibold text-zinc-900 dark:text-zinc-200 flex items-center gap-2"
             >
-              <HeartHandshake class="w-4 h-4 text-rose-600 dark:text-rose-400" />
+              <GitPullRequest class="w-4 h-4 text-rose-600 dark:text-rose-400" />
               <span>{{ t.about.coreValuesTitle }}</span>
             </h4>
             <p class="text-xs text-zinc-600 dark:text-zinc-400 font-mono leading-relaxed">

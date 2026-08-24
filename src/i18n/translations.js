@@ -35,9 +35,9 @@ export const translations = {
       subheading: 'cat ~/about/bio.txt',
       p1: 'I am a backend developer with experience building web APIs and managing databases using PHP, Laravel, and MySQL.',
       p2: 'I am currently expanding my skills with Golang, PostgreSQL, and container orchestration using K3s. For my daily development setup, I use Arch Linux (with niri) on PC and CachyOS (with GNOME) on laptop, using Ghostty, Fish Shell, and Neovim.',
-      coreValuesTitle: 'Development Focus',
+      coreValuesTitle: 'Motivation & Community',
       coreValues:
-        'Writing clean and maintainable code, designing practical APIs, and keeping development workflows simple.'
+        'Driven by curiosity, continuous learning, and the open-source spirit. Always eager to build useful tools for the community, with small contributions to Laravel and ongoing personal projects.'
     },
     experience: {
       heading: 'Work & Learning Timeline',
