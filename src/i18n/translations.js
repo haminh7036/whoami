@@ -12,7 +12,7 @@ export const translations = {
     hero: {
       status: 'Open to opportunities',
       greeting: "Hi, I'm",
-      title: 'Backend Developer',
+      title: 'Backend Developer (PHP & Go)',
       bio: 'Backend developer with practical experience in PHP (Laravel) & MySQL, currently learning Golang, PostgreSQL, and K3s. Daily Linux user on Arch Linux & CachyOS with Neovim, Fish Shell, and Ghostty.',
       location: 'Vietnam',
       viewProjects: 'View Projects',
@@ -95,6 +95,18 @@ export const translations = {
           featured: false
         },
         {
+          id: 'memremark',
+          title: 'memremark - AI Memory Palace',
+          description:
+            'Seamless cross-session working memory palace and context bridge for Claude Code and Antigravity CLI built with Go, SQLite, and Model Context Protocol.',
+          tags: ['Go', 'SQLite', 'MCP', 'AI Agents'],
+          category: 'Hobby & Personal',
+          private: false,
+          github: 'https://github.com/haminh7036/memremark',
+          demo: '',
+          featured: true
+        },
+        {
           id: 'whoami',
           title: 'whoami - Personal Portfolio',
           description:
@@ -103,35 +115,32 @@ export const translations = {
           category: 'Hobby & Personal',
           private: false,
           github: 'https://github.com/haminh7036/whoami',
-          demo: 'https://haminh.dev',
-          featured: true,
-          stars: 12
+          demo: '',
+          featured: true
         },
         {
-          id: 'go-playground',
-          title: 'Go Backend Playground',
+          id: 'arch-niri-config',
+          title: 'Arch Linux niri Config',
           description:
-            'Toy and practice repository exploring Go HTTP services, PostgreSQL connection pooling, and Docker/K3s deployment configs.',
-          tags: ['Go', 'PostgreSQL', 'Docker', 'K3s'],
+            'Personal dotfiles and configuration for Arch Linux running the niri scrollable-tiling Wayland compositor.',
+          tags: ['Linux', 'Arch Linux', 'niri', 'Wayland'],
           category: 'Hobby & Personal',
           private: false,
-          github: 'https://github.com/haminh7036',
+          github: 'https://github.com/haminh7036/arch-niri-config',
           demo: '',
-          featured: true,
-          stars: 18
+          featured: false
         },
         {
-          id: 'dotfiles',
-          title: 'Linux Dotfiles',
+          id: 'neovim-config',
+          title: 'Neovim Lua Config',
           description:
-            'Personal configuration files for Arch Linux (niri), CachyOS (GNOME), Fish Shell, Ghostty terminal, and Neovim.',
-          tags: ['Linux', 'Neovim', 'Fish', 'Lua'],
+            'Fast and modular Neovim configuration written in Lua tailored for PHP/Laravel, Go, and web development workflows.',
+          tags: ['Lua', 'Neovim', 'LSP', 'Treesitter'],
           category: 'Hobby & Personal',
           private: false,
-          github: 'https://github.com/haminh7036',
+          github: 'https://github.com/haminh7036/neovim-config',
           demo: '',
-          featured: false,
-          stars: 48
+          featured: false
         }
       ]
     },
@@ -156,7 +165,7 @@ export const translations = {
         },
         {
           name: 'Environment & Tools',
-          items: ['Neovim', 'Ghostty Terminal', 'Fish Shell', 'Wayland (niri & GNOME)']
+          items: ['Neovim (Lua)', 'Ghostty Terminal', 'Fish Shell', 'Wayland (niri & GNOME)']
         }
       ]
     },
