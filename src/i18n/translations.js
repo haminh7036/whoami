@@ -12,7 +12,7 @@ export const translations = {
     hero: {
       status: 'Open to opportunities',
       greeting: "Hi, I'm",
-      title: 'Backend Developer (PHP & Go)',
+      title: 'Backend Developer',
       bio: 'Backend developer with practical experience in PHP (Laravel) & MySQL, currently learning Golang, PostgreSQL, and K3s. Daily Linux user on Arch Linux & CachyOS with Neovim, Fish Shell, and Ghostty.',
       location: 'Vietnam',
       viewProjects: 'View Projects',
@@ -47,6 +47,7 @@ export const translations = {
           period: 'Present',
           role: 'Self-Learning & Practice',
           company: 'Personal Projects',
+          hash: 'cb3f769',
           description:
             'Practicing Go, building small backend microservices, and testing K3s cluster deployments in a local environment.'
         },
@@ -54,6 +55,7 @@ export const translations = {
           period: '2023 - 2025',
           role: 'PHP / Laravel Developer',
           company: 'Software Company',
+          hash: '7d0c70b',
           description:
             'Developed RESTful APIs, designed database schemas, and handled background queues using Laravel and MySQL.'
         }
@@ -161,7 +163,7 @@ export const translations = {
     contact: {
       sectionNumber: '04. CONTACT',
       heading: 'Get in Touch',
-      subheading: 'ssh contact@haminh.dev',
+      subheading: 'ssh contact',
       intro:
         'If you have an opportunity, project question, or just want to connect about PHP, Go, or Linux setups, feel free to send an email.',
       sendEmail: 'Send Email',

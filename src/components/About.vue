@@ -97,7 +97,7 @@ const { t } = useI18n()
                   <span
                     class="text-[10px] font-mono px-2 py-0.5 rounded bg-zinc-100 dark:bg-[#1f1b2e] text-zinc-600 dark:text-zinc-400 border border-zinc-200 dark:border-[#2f273d]"
                   >
-                    commit #{{ (idx + 1) * 73 }}a8f
+                    commit #{{ exp.hash }}
                   </span>
                 </div>
 

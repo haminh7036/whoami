@@ -1,5 +1,5 @@
 <script setup>
-import { ref } from 'vue'
+import { ref, computed } from 'vue'
 import { profile } from '../data/portfolio.js'
 import { useI18n } from '../composables/useI18n.js'
 import { Terminal, Send, Copy, Check } from '@lucide/vue'
@@ -9,9 +9,12 @@ import LinkedinIcon from './icons/LinkedinIcon.vue'
 const { t } = useI18n()
 const copied = ref(false)
 
+const emailAddress = computed(() => (profile.socials?.email || '').replace(/^mailto:/, ''))
+
 async function copyEmail() {
   try {
-    await navigator.clipboard.writeText('contact@haminh.dev')
+    if (!emailAddress.value) return
+    await navigator.clipboard.writeText(emailAddress.value)
     copied.value = true
     setTimeout(() => {
       copied.value = false
@@ -38,9 +41,12 @@ async function copyEmail() {
           <Terminal class="w-3.5 h-3.5" />
           <span>{{ t.contact.sectionNumber }}</span>
         </div>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-zinc-900 dark:text-zinc-100">
+          {{ t.contact.heading }}
+        </h2>
         <p class="font-mono text-xs text-zinc-500 dark:text-zinc-400">
           <span class="text-rose-600 dark:text-rose-400 font-bold">$</span>
-          {{ t.contact.subheading }}
+          ssh {{ emailAddress }}
         </p>
       </div>
 

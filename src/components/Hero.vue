@@ -1,5 +1,5 @@
 <script setup>
-import { ref } from 'vue'
+import { ref, computed } from 'vue'
 import { profile } from '../data/portfolio.js'
 import { useI18n } from '../composables/useI18n.js'
 import { ArrowRight, Copy, Check, MapPin, Sparkles } from '@lucide/vue'
@@ -8,9 +8,12 @@ import GithubIcon from './icons/GithubIcon.vue'
 const { t } = useI18n()
 const copied = ref(false)
 
+const emailAddress = computed(() => (profile.socials?.email || '').replace(/^mailto:/, ''))
+
 async function copyEmail() {
   try {
-    await navigator.clipboard.writeText('contact@haminh.dev')
+    if (!emailAddress.value) return
+    await navigator.clipboard.writeText(emailAddress.value)
     copied.value = true
     setTimeout(() => {
       copied.value = false

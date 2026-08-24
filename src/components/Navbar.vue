@@ -3,6 +3,7 @@ import { ref } from 'vue'
 import { Terminal, Sun, Moon, Menu, X } from '@lucide/vue'
 import { useI18n } from '../composables/useI18n.js'
 import { useTheme } from '../composables/useTheme.js'
+import { profile } from '../data/portfolio.js'
 import GithubIcon from './icons/GithubIcon.vue'
 
 const { t } = useI18n()
@@ -67,7 +68,7 @@ const isOpen = ref(false)
 
         <!-- GitHub Profile -->
         <a
-          href="https://github.com/haminh7036"
+          :href="profile.socials.github"
           target="_blank"
           rel="noopener noreferrer"
           class="hidden sm:flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-mono bg-zinc-900 text-white dark:bg-[#1f1b2e] dark:text-zinc-200 border border-transparent dark:border-[#2f273d] hover:bg-zinc-800 dark:hover:bg-[#2d2742] cursor-pointer transition-colors"
@@ -109,13 +110,13 @@ const isOpen = ref(false)
         > {{ link.name }}
       </a>
       <a
-        href="https://github.com/haminh7036"
+        :href="profile.socials.github"
         target="_blank"
         rel="noopener noreferrer"
         class="flex items-center gap-2 pt-2 text-zinc-800 dark:text-zinc-200 text-sm"
       >
         <GithubIcon class="w-4 h-4" />
-        <span>github.com/haminh7036</span>
+        <span>github.com/{{ profile.handle.replace('@', '') }}</span>
       </a>
     </div>
   </header>
