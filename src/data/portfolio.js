@@ -1,6 +1,6 @@
 // ponytail: Global profile metadata.
 export const profile = {
-  name: 'Ha Minh',
+  name: 'Minh Ha',
   handle: '@haminh7036',
   title: 'Backend Engineer',
   bio: 'Backend Engineer with 5+ years of production experience in PHP (Laravel) and MySQL. Sole Backend Engineer on a 60+ batch e-commerce platform (1M+ SKUs); now building in Go. Daily Linux user on Arch Linux & CachyOS with niri, Ghostty, Fish Shell, and Neovim.',

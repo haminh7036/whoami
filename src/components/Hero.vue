@@ -50,7 +50,7 @@ const sysRows = computed(() => [
           <img
             :src="profile.avatar"
             :alt="profile.name"
-            class="w-16 h-16 sm:w-20 sm:h-20 object-cover border border-[var(--border-main)] grayscale-[15%]"
+            class="w-16 h-16 sm:w-20 sm:h-20 rounded-full object-cover border border-[var(--border-main)] grayscale-[15%]"
             loading="eager"
           />
           <div class="space-y-1">
