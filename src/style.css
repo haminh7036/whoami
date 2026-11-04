@@ -4,27 +4,38 @@
 
 @layer base {
   :root {
-    --bg-main: #faf8fb;
-    --bg-surface: #ffffff;
-    --bg-card: #ffffff;
-    --border-main: #f0e6f2;
-    --text-main: #191421;
-    --text-muted: #6b6475;
-    --accent-primary: #e11d48;
-    --accent-crystal: #0284c7;
-    --accent-subtle: #fff1f2;
+    --bg-main: #f6f5f1;
+    --bg-surface: #efece6;
+    --border-main: #e2dfd7;
+    --border-strong: #141413;
+    --text-main: #141413;
+    --text-muted: #5c5a54;
+    --text-faint: #9e9c94;
+    --accent-primary: #c84b31;
   }
 
   .dark {
-    --bg-main: #0e0d14;
-    --bg-surface: #161422;
-    --bg-card: #161422;
-    --border-main: #2f273d;
-    --text-main: #f5f2f8;
-    --text-muted: #9f96ad;
-    --accent-primary: #f43f5e;
-    --accent-crystal: #38bdf8;
-    --accent-subtle: rgba(244, 63, 94, 0.12);
+    --bg-main: #111110;
+    --bg-surface: #1a1917;
+    --border-main: #262522;
+    --border-strong: #eceae4;
+    --text-main: #eceae4;
+    --text-muted: #a09d96;
+    --text-faint: #6e6c66;
+    --accent-primary: #e05a40;
+  }
+
+  html,
+  body {
+    height: 100dvh;
+    overflow: hidden;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+
+  html::-webkit-scrollbar,
+  body::-webkit-scrollbar {
+    display: none;
   }
 
   body {
@@ -49,33 +60,11 @@
   }
 }
 
-/* Eye-friendly custom scrollbar - Carlotta velvet theme */
-::-webkit-scrollbar {
-  width: 6px;
-  height: 6px;
-}
-::-webkit-scrollbar-track {
-  background: transparent;
-}
-::-webkit-scrollbar-thumb {
-  background: #d8ccd9;
-  border-radius: 9999px;
-}
-.dark ::-webkit-scrollbar-thumb {
-  background: #332b43;
-}
-::-webkit-scrollbar-thumb:hover {
-  background: #be185d;
-}
-.dark ::-webkit-scrollbar-thumb:hover {
-  background: #e11d48;
+.no-scrollbar {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
 }
 
-/* Subtle Carlotta crystal dot-grid background */
-.linux-grid {
-  background-size: 24px 24px;
-  background-image: radial-gradient(circle, rgba(225, 29, 72, 0.1) 1px, transparent 1px);
-}
-.dark .linux-grid {
-  background-image: radial-gradient(circle, rgba(244, 63, 94, 0.08) 1px, transparent 1px);
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
 }

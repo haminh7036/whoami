@@ -1,36 +1,51 @@
 <script setup>
-import { useI18n } from '../composables/useI18n.js'
-import { profile } from '../data/portfolio.js'
+import { useNavigation } from '../composables/useNavigation.js'
 
-const { t, locale } = useI18n()
-const currentYear = new Date().getFullYear()
+const { chapters, currentChapter, targetChapter, scrollProgress } = useNavigation()
 </script>
 
 <template>
   <footer
-    class="py-8 px-4 sm:px-6 border-t border-zinc-200/80 dark:border-[#2f273d]/80 font-mono text-xs text-zinc-500 dark:text-zinc-400 transition-colors duration-200"
+    class="shrink-0 border-t border-[var(--border-main)] bg-[var(--bg-main)] relative z-30 select-none"
   >
-    <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
-      <!-- Tmux style indicator -->
-      <div class="flex items-center gap-2">
-        <span
-          class="px-2 py-0.5 rounded-md bg-rose-50 dark:bg-rose-950/40 text-rose-700 dark:text-rose-400 font-bold border border-rose-200 dark:border-rose-800/60"
-        >
-          [0] whoami*
+    <div
+      class="max-w-[1440px] mx-auto px-4 sm:px-12 h-11 flex items-center justify-between gap-2 sm:gap-4 font-mono text-[11px] sm:text-xs"
+    >
+      <!-- Left: Quiet Keyboard Hints -->
+      <div class="hidden md:flex items-center gap-5 text-[var(--text-muted)]">
+        <span><strong class="text-[var(--text-main)] font-medium">[j/k]</strong> select row</span>
+        <span>
+          <strong class="text-[var(--text-main)] font-medium">[h/l]</strong> prev/next chapter
         </span>
-        <span>© {{ currentYear }} {{ profile.name }}. {{ t.footer.rights }}</span>
+        <span><strong class="text-[var(--text-main)] font-medium">[1-5]</strong> jump</span>
+        <span><strong class="text-[var(--text-main)] font-medium">[gg/G]</strong> ends</span>
+        <span><strong class="text-[var(--text-main)] font-medium">[enter]</strong> open</span>
+      </div>
+      <div class="md:hidden text-[var(--text-muted)] truncate">
+        <span>Swipe ←/→ or tap 01–05</span>
       </div>
 
-      <!-- Center status -->
-      <div class="hidden sm:flex items-center gap-3 text-[11px] text-zinc-400 dark:text-zinc-500">
-        <span>{{ t.footer.kernel }}</span>
-        <span>•</span>
-        <span>lang: {{ locale.toUpperCase() }}</span>
-      </div>
+      <!-- Right: Scroll-Charge Indicator & Chapter Counter -->
+      <div class="flex items-center gap-3 sm:gap-4 ml-auto shrink-0">
+        <span class="hidden sm:inline text-[var(--text-muted)]" data-testid="footer-next-label">
+          Next: {{ targetChapter.index }} / {{ targetChapter.label }}
+        </span>
 
-      <!-- Right note -->
-      <div class="text-[11px] text-zinc-500 dark:text-zinc-400">
-        {{ t.footer.builtWith }}
+        <!-- Mini Architectural Progress Bar -->
+        <div
+          class="w-20 sm:w-36 h-1 bg-[var(--border-main)] overflow-hidden"
+          aria-label="Scroll transition progress"
+        >
+          <div
+            data-testid="bottom-scroll-progress"
+            class="h-full bg-[var(--border-strong)] transition-[width] duration-150 ease-out"
+            :style="{ width: `${scrollProgress}%` }"
+          ></div>
+        </div>
+
+        <span class="font-bold text-[var(--text-main)]" data-testid="chapter-counter">
+          {{ currentChapter.index }} / 0{{ chapters.length }}
+        </span>
       </div>
     </div>
   </footer>

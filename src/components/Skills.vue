@@ -1,76 +1,103 @@
 <script setup>
+import { watchEffect } from 'vue'
 import { useI18n } from '../composables/useI18n.js'
-import { Terminal, CheckCircle2, Code2, Layout, Server } from '@lucide/vue'
+import { useNavigation } from '../composables/useNavigation.js'
 
 const { t } = useI18n()
+const { activeChapter, activeItemIndex, setChapterItemCount, setChapterItemIndex } = useNavigation()
 
-function getCategoryIcon(idx) {
-  if (idx === 0) return Code2
-  if (idx === 1) return Layout
-  return Server
+const CHAPTER_IDX = 3
+
+watchEffect(() => {
+  setChapterItemCount(CHAPTER_IDX, t.value.skills.categories.length)
+})
+
+function selectCategory(idx) {
+  setChapterItemIndex(CHAPTER_IDX, idx)
+}
+
+function formatIndex(num) {
+  return String(num).padStart(2, '0')
 }
 </script>
 
 <template>
   <section
-    id="skills"
-    class="py-16 px-4 sm:px-6 max-w-6xl mx-auto border-t border-zinc-200/80 dark:border-[#2f273d]/80 transition-colors duration-200 scroll-mt-20"
+    aria-label="Stack"
+    class="min-h-full lg:h-full max-w-[1440px] mx-auto px-4 sm:px-12 py-8 lg:py-12 flex flex-col justify-between gap-8"
   >
-    <div class="space-y-8">
-      <!-- Section Header -->
+    <!-- Top Section Heading -->
+    <div
+      class="flex flex-col sm:flex-row sm:items-end justify-between gap-4 pb-6 border-b border-[var(--border-main)]"
+    >
       <div class="space-y-2">
-        <div
-          class="flex items-center gap-2 text-xs font-mono font-semibold text-rose-600 dark:text-rose-400"
-        >
-          <Terminal class="w-3.5 h-3.5" />
-          <span>{{ t.skills.sectionNumber }}</span>
-        </div>
-        <h2 class="text-2xl sm:text-3xl font-extrabold text-zinc-900 dark:text-zinc-100">
+        <p class="font-mono text-xs tracking-[0.14em] uppercase text-[var(--text-muted)]">
+          04 / TECHNICAL STACK
+        </p>
+        <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight text-[var(--text-main)]">
           {{ t.skills.heading }}
         </h2>
-        <p class="font-mono text-xs text-zinc-500 dark:text-zinc-400">
-          <span class="text-rose-600 dark:text-rose-400 font-bold">$</span>
-          {{ t.skills.subheading }}
-        </p>
       </div>
+      <p class="font-mono text-xs text-[var(--text-muted)]">
+        Production Backend · Infrastructure · Daily Linux Environment
+      </p>
+    </div>
 
-      <!-- Categories Grid -->
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+    <!-- 3 Architectural Vertical Columns Separated by 1px Hairlines -->
+    <div
+      class="flex-1 grid grid-cols-1 md:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-[var(--border-main)]"
+    >
+      <div
+        v-for="(cat, idx) in t.skills.categories"
+        :key="cat.name"
+        :data-testid="`skill-col-${idx}`"
+        class="relative py-6 px-5 md:px-7 transition-colors cursor-pointer"
+        :class="
+          activeChapter === CHAPTER_IDX && activeItemIndex === idx
+            ? 'bg-[var(--bg-surface)]/70'
+            : 'hover:bg-[var(--bg-surface)]/30'
+        "
+        @click="selectCategory(idx)"
+      >
         <div
-          v-for="(cat, idx) in t.skills.categories"
-          :key="cat.name"
-          class="p-6 rounded-2xl bg-white dark:bg-[#161422] border border-zinc-200 dark:border-[#2f273d] space-y-5 shadow-sm hover:border-rose-300 dark:hover:border-rose-800/80 transition-colors"
+          v-if="activeChapter === CHAPTER_IDX && activeItemIndex === idx"
+          class="absolute top-0 left-0 right-0 h-[3px] bg-[var(--accent-primary)]"
+        ></div>
+        <div
+          class="flex items-baseline justify-between pb-4 border-b border-[var(--border-strong)]"
         >
-          <!-- Category Header -->
-          <div
-            class="flex items-center justify-between pb-3 border-b border-zinc-100 dark:border-[#262035]"
-          >
-            <div
-              class="flex items-center gap-2 font-mono text-xs font-bold text-zinc-900 dark:text-zinc-100"
+          <div class="flex items-baseline gap-3">
+            <span
+              class="font-mono text-xs font-bold"
+              :class="
+                activeChapter === CHAPTER_IDX && activeItemIndex === idx
+                  ? 'text-[var(--accent-primary)]'
+                  : 'text-[var(--text-faint)]'
+              "
             >
-              <component
-                :is="getCategoryIcon(idx)"
-                class="w-4 h-4 text-rose-600 dark:text-rose-400"
-              />
-              <span>// {{ cat.name }}</span>
-            </div>
-            <span class="text-[10px] font-mono text-zinc-400">drwxr-xr-x</span>
+              {{ formatIndex(idx + 1) }}
+            </span>
+            <h3 class="text-base sm:text-lg font-bold text-[var(--text-main)]">
+              {{ cat.name }}
+            </h3>
           </div>
-
-          <!-- Items list -->
-          <ul class="space-y-2.5">
-            <li
-              v-for="item in cat.items"
-              :key="item"
-              class="flex items-center gap-2.5 text-xs sm:text-sm font-mono text-zinc-700 dark:text-zinc-300 group"
-            >
-              <CheckCircle2
-                class="w-3.5 h-3.5 text-rose-600 dark:text-rose-400 shrink-0 group-hover:scale-110 transition-transform"
-              />
-              <span>{{ item }}</span>
-            </li>
-          </ul>
+          <span class="font-mono text-[11px] text-[var(--text-faint)]">
+            {{ formatIndex(cat.items.length) }}
+          </span>
         </div>
+
+        <ul class="divide-y divide-[var(--border-main)]">
+          <li
+            v-for="(item, itemIdx) in cat.items"
+            :key="item"
+            class="py-3.5 flex items-baseline justify-between gap-4 font-mono text-xs sm:text-sm"
+          >
+            <span class="text-[var(--text-main)] font-medium">{{ item }}</span>
+            <span class="text-[var(--text-faint)] text-[11px]">
+              {{ formatIndex(idx + 1) }}.{{ formatIndex(itemIdx + 1) }}
+            </span>
+          </li>
+        </ul>
       </div>
     </div>
   </section>

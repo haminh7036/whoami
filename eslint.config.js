@@ -3,7 +3,7 @@ import prettierConfig from 'eslint-config-prettier'
 
 export default [
   {
-    ignores: ['dist/**', 'node_modules/**', '.git/**']
+    ignores: ['dist/**', 'node_modules/**', '.git/**', 'playwright-report/**', 'test-results/**']
   },
   ...pluginVue.configs['flat/recommended'],
   prettierConfig,
@@ -18,6 +18,8 @@ export default [
         navigator: 'readonly',
         localStorage: 'readonly',
         setTimeout: 'readonly',
+        clearTimeout: 'readonly',
+        Element: 'readonly',
         console: 'readonly',
         process: 'readonly'
       }

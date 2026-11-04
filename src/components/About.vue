@@ -1,120 +1,126 @@
 <script setup>
+import { watchEffect } from 'vue'
 import { useI18n } from '../composables/useI18n.js'
-import { Terminal, GitPullRequest } from '@lucide/vue'
+import { useNavigation } from '../composables/useNavigation.js'
 
 const { t } = useI18n()
+const { activeChapter, activeItemIndex, setChapterItemCount, setChapterItemIndex } = useNavigation()
+
+const CHAPTER_IDX = 1
+
+watchEffect(() => {
+  setChapterItemCount(CHAPTER_IDX, t.value.experience.items.length)
+})
+
+function selectExperience(idx) {
+  setChapterItemIndex(CHAPTER_IDX, idx)
+}
 </script>
 
 <template>
   <section
-    id="about"
-    class="py-16 px-4 sm:px-6 max-w-6xl mx-auto border-t border-zinc-200/80 dark:border-[#2f273d]/80 transition-colors duration-200 scroll-mt-20"
+    aria-label="Experience"
+    class="min-h-full lg:h-full max-w-[1440px] mx-auto px-4 sm:px-12 grid grid-cols-1 lg:grid-cols-12"
   >
-    <div class="space-y-10">
-      <!-- Section Header -->
-      <div class="space-y-2">
-        <div
-          class="flex items-center gap-2 text-xs font-mono font-semibold text-rose-600 dark:text-rose-400"
-        >
-          <Terminal class="w-3.5 h-3.5" />
-          <span>{{ t.about.sectionNumber }}</span>
-        </div>
-        <h2 class="text-2xl sm:text-3xl font-extrabold text-zinc-900 dark:text-zinc-100">
+    <!-- Left Column (Cols 1-5): Biography & Open Source Ethos -->
+    <div
+      class="lg:col-span-5 py-8 lg:py-12 lg:pr-10 lg:border-r border-[var(--border-main)] flex flex-col justify-between gap-8"
+    >
+      <div class="space-y-5">
+        <p class="font-mono text-xs tracking-[0.14em] uppercase text-[var(--text-muted)]">
+          02 / EXPERIENCE &amp; BACKGROUND
+        </p>
+
+        <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight text-[var(--text-main)]">
           {{ t.about.heading }}
         </h2>
+
+        <div class="space-y-4 text-sm sm:text-base text-[var(--text-muted)] leading-relaxed pt-1">
+          <p>{{ t.about.p1 }}</p>
+          <p>{{ t.about.p2 }}</p>
+        </div>
       </div>
 
-      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
-        <!-- Left: Bio & Philosophy -->
-        <div class="lg:col-span-6 space-y-6">
-          <div
-            class="p-6 rounded-2xl bg-white dark:bg-[#161422] border border-zinc-200 dark:border-[#2f273d] space-y-4 shadow-sm"
-          >
-            <div
-              class="flex items-center gap-2 font-mono text-xs text-zinc-400 dark:text-zinc-500 pb-2 border-b border-zinc-100 dark:border-[#262035]"
-            >
-              <span class="text-rose-600 dark:text-rose-400 font-bold">$</span>
-              <span>cat ~/about/bio.txt</span>
-            </div>
+      <!-- Motivation & Open Source Section -->
+      <div class="pt-6 border-t border-[var(--border-main)] space-y-2">
+        <div class="font-mono text-[11px] uppercase tracking-[0.12em] text-[var(--accent-primary)]">
+          {{ t.about.coreValuesTitle }}
+        </div>
+        <p class="text-xs sm:text-sm text-[var(--text-muted)] leading-relaxed">
+          {{ t.about.coreValues }}
+        </p>
+      </div>
+    </div>
 
-            <p class="text-zinc-700 dark:text-zinc-300 text-sm leading-relaxed">
-              {{ t.about.p1 }}
-            </p>
-
-            <p class="text-zinc-700 dark:text-zinc-300 text-sm leading-relaxed">
-              {{ t.about.p2 }}
-            </p>
-          </div>
-
-          <!-- Motivation & Community Card -->
-          <div
-            class="p-5 rounded-2xl bg-zinc-50 dark:bg-[#161422]/70 border border-zinc-200 dark:border-[#2f273d] space-y-2"
-          >
-            <h4
-              class="text-xs font-mono font-semibold text-zinc-900 dark:text-zinc-200 flex items-center gap-2"
-            >
-              <GitPullRequest class="w-4 h-4 text-rose-600 dark:text-rose-400" />
-              <span>{{ t.about.coreValuesTitle }}</span>
-            </h4>
-            <p class="text-xs text-zinc-600 dark:text-zinc-400 font-mono leading-relaxed">
-              {{ t.about.coreValues }}
-            </p>
-          </div>
+    <!-- Right Column (Cols 6-12): Indexed Career Timeline -->
+    <div class="lg:col-span-7 py-8 lg:py-12 lg:pl-12 flex flex-col justify-between">
+      <div class="space-y-2">
+        <div
+          class="flex items-center justify-between pb-3 border-b border-[var(--border-strong)] font-mono text-[11px] uppercase tracking-[0.1em] text-[var(--text-faint)]"
+        >
+          <span>INDEX / ROLE &amp; ORGANIZATION</span>
+          <span>PERIOD / REF</span>
         </div>
 
-        <!-- Right: Career Timeline as Git Log -->
-        <div id="experience" class="lg:col-span-6 space-y-4 scroll-mt-20">
-          <div
-            class="p-6 rounded-2xl bg-white dark:bg-[#161422] border border-zinc-200 dark:border-[#2f273d] shadow-sm space-y-6"
+        <div class="divide-y divide-[var(--border-main)]">
+          <article
+            v-for="(exp, idx) in t.experience.items"
+            :key="exp.hash"
+            :data-testid="`exp-row-${idx}`"
+            class="relative py-5 px-4 transition-colors cursor-pointer"
+            :class="
+              activeChapter === CHAPTER_IDX && activeItemIndex === idx
+                ? 'bg-[var(--bg-surface)]'
+                : 'hover:bg-[var(--bg-surface)]/50'
+            "
+            @click="selectExperience(idx)"
           >
+            <!-- Left 3px Terracotta Active Indicator -->
             <div
-              class="flex items-center justify-between pb-2 border-b border-zinc-100 dark:border-[#262035] font-mono text-xs"
-            >
-              <span class="text-zinc-500 dark:text-zinc-400">
-                <span class="text-rose-600 dark:text-rose-400 font-bold">$</span>
-                {{ t.experience.subheading }}
-              </span>
-              <span class="text-[11px] text-sky-600 dark:text-sky-400 font-semibold"
-                >branch: main</span
-              >
-            </div>
+              v-if="activeChapter === CHAPTER_IDX && activeItemIndex === idx"
+              class="absolute left-0 top-0 bottom-0 w-[3px] bg-[var(--accent-primary)]"
+            ></div>
 
-            <div class="space-y-6">
-              <div
-                v-for="(exp, idx) in t.experience.items"
-                :key="idx"
-                class="relative pl-6 border-l-2 border-zinc-200 dark:border-[#2f273d] space-y-1.5 group hover:border-rose-500 dark:hover:border-rose-400 transition-colors"
-              >
-                <!-- Commit Dot -->
-                <div
-                  class="absolute -left-[7px] top-1 w-3 h-3 rounded-full bg-zinc-300 dark:bg-[#2f273d] group-hover:bg-rose-500 dark:group-hover:bg-rose-400 border-2 border-white dark:border-[#161422] transition-colors"
-                ></div>
-
-                <div class="flex items-center justify-between gap-2">
-                  <span class="text-xs font-mono font-semibold text-rose-700 dark:text-rose-400">
-                    {{ exp.period }}
-                  </span>
-                  <span
-                    class="text-[10px] font-mono px-2 py-0.5 rounded bg-zinc-100 dark:bg-[#1f1b2e] text-zinc-600 dark:text-zinc-400 border border-zinc-200 dark:border-[#2f273d]"
-                  >
-                    commit #{{ exp.hash }}
-                  </span>
-                </div>
-
-                <h3 class="text-sm sm:text-base font-bold text-zinc-900 dark:text-zinc-100">
+            <div class="flex flex-wrap items-baseline justify-between gap-2">
+              <div class="flex items-baseline gap-4">
+                <span
+                  class="font-mono text-xs font-bold"
+                  :class="
+                    activeChapter === CHAPTER_IDX && activeItemIndex === idx
+                      ? 'text-[var(--accent-primary)]'
+                      : 'text-[var(--text-faint)]'
+                  "
+                >
+                  0{{ idx + 1 }}
+                </span>
+                <h3 class="text-base sm:text-lg font-bold text-[var(--text-main)]">
                   {{ exp.role }}
-                  <span class="text-zinc-500 dark:text-zinc-400 font-normal"
-                    >@ {{ exp.company }}</span
-                  >
+                  <span class="font-normal text-[var(--text-muted)]">· {{ exp.company }}</span>
                 </h3>
+              </div>
 
-                <p class="text-xs sm:text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed">
-                  {{ exp.description }}
-                </p>
+              <div class="font-mono text-xs text-[var(--text-muted)]">
+                <span>{{ exp.period }}</span>
+                <span class="text-[var(--text-faint)] ml-2">#{{ exp.hash }}</span>
               </div>
             </div>
-          </div>
+
+            <p class="mt-2.5 pl-8 text-xs sm:text-sm text-[var(--text-muted)] leading-relaxed">
+              {{ exp.description }}
+            </p>
+          </article>
         </div>
+      </div>
+
+      <div
+        class="pt-4 border-t border-[var(--border-main)] flex items-center justify-between font-mono text-xs text-[var(--text-faint)]"
+      >
+        <span>{{ t.experience.heading }}</span>
+        <span
+          >0{{ (activeChapter === CHAPTER_IDX ? activeItemIndex : 0) + 1 }} / 0{{
+            t.experience.items.length
+          }}</span
+        >
       </div>
     </div>
   </section>
