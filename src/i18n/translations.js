@@ -33,7 +33,7 @@ export const translations = {
       sectionNumber: '01. ABOUT',
       heading: 'About Me',
       subheading: 'cat ~/about/bio.txt',
-      p1: 'Backend Engineer with 5+ years of production experience in PHP (Laravel) and MySQL. Since 2024, scaling and stabilizing a 60+ batch e-commerce platform (1M+ SKUs) for Japanese marketplaces; built its PHP 8.4 / Laravel 12 base, migrated it from PHP 5.6 / Laravel 5.2 with a teammate, and now maintain it as the Sole Backend Engineer.',
+      p1: 'Backend Engineer with 5+ years of production experience in PHP (Laravel) and MySQL. Since 2024, scaling and stabilizing a 60+ batch e-commerce platform (1M+ SKUs) for Japanese marketplaces (Rakuten, Yahoo! Shopping): built its PHP 8.4 / Laravel 12 base first and drove the migration from PHP 5.6 / Laravel 5.2 (guiding a teammate to port business logic across the batches and internal staff portal), and now run the platform as its Sole Backend Engineer.',
       p2: 'Now focused on Go and PostgreSQL, with a personal Go API running on GCP (Docker Compose, Nginx, Cloudflare). Daily environment: Arch Linux and CachyOS with niri, Ghostty, Fish Shell, and Neovim.',
       coreValuesTitle: 'Open Source & Engineering Focus',
       coreValues:
@@ -49,7 +49,7 @@ export const translations = {
           company: 'Rivercrane Vietnam',
           hash: 'a4c8e12',
           description:
-            'Built the PHP 8.4 / Laravel 12 base and migrated 60+ production batches and the staff portal from PHP 5.6 / Laravel 5.2 with a teammate; Sole Backend Engineer since Dec 2025. Fixed circular-reference OOM crashes (1M+ SKUs), 3+ hour MySQL query stalls via keyset pagination, and 1-2h image pulls down to 5-15m with parallel rclone.'
+            'Drove the PHP 5.6 -> 8.4 / Laravel 5.2 -> 12 migration: built the new base first (reproducing legacy outputs to minimize rework), then guided a teammate as we ported 60+ production batches and the staff portal in phases (Jul-Dec 2025); Sole Backend Engineer since Dec 2025. Fixed circular-reference OOM crashes (1M+ SKUs), 3+ hour MySQL query stalls via keyset pagination, and 1-2h image pulls down to 5-15m with parallel rclone.'
         },
         {
           period: 'Mar 2021 - Apr 2024',
@@ -82,7 +82,7 @@ export const translations = {
           id: 'ecommerce-batch-platform',
           title: 'E-Commerce Sync & Batch Platform',
           description:
-            '60+ production batches and internal staff portal syncing 1M+ SKUs with Japanese marketplaces. Migrated from PHP 5.6 / Laravel 5.2 to PHP 8.4 / Laravel 12; includes CDP browser automation and maintenance-aware scheduling.',
+            '60+ production batches and internal staff portal syncing 1M+ SKUs with Japanese marketplaces. Built the PHP 8.4 / Laravel 12 base and drove the phased migration from PHP 5.6 / Laravel 5.2; includes CDP browser automation and maintenance-aware scheduling.',
           tags: ['PHP 8.4', 'Laravel 12', 'MySQL', 'Inertia.js', 'Docker'],
           category: 'Company Work',
           private: true,
