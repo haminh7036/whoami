@@ -13,7 +13,7 @@ export const translations = {
       status: 'Open to opportunities',
       greeting: "Hi, I'm",
       title: 'Backend Engineer',
-      bio: 'PHP / Laravel Backend Engineer with 5+ years of production experience. Sole Backend Engineer on a 60+ batch e-commerce platform (1M+ SKUs) and open-source contributor to Laravel Telescope. Daily Linux user on Arch Linux & CachyOS with niri, Ghostty, Fish Shell, and Neovim.',
+      bio: 'Backend Engineer with 5+ years of production experience in PHP (Laravel) and MySQL. Sole Backend Engineer on a 60+ batch e-commerce platform (1M+ SKUs) and open-source contributor to Laravel Telescope. Daily Linux user on Arch Linux & CachyOS with niri, Ghostty, Fish Shell, and Neovim.',
       location: 'Ho Chi Minh City, Vietnam',
       viewProjects: 'View Projects',
       getInTouch: 'Contact Me',
