@@ -60,7 +60,7 @@ test.describe('whoami — Swiss Editorial Single-Viewport UI/UX', () => {
     await page.waitForTimeout(550)
 
     const activeTitle = page.getByTestId('active-project-title')
-    await expect(activeTitle).toHaveText('E-Commerce Sync & Batch Platform')
+    await expect(activeTitle).toHaveText('E-Commerce Batch Platform')
     await page.screenshot({ path: `${ARTIFACT_DIR}/real_ch03_light.png` })
 
     await page.keyboard.press('j')
@@ -72,7 +72,7 @@ test.describe('whoami — Swiss Editorial Single-Viewport UI/UX', () => {
     await expect(activeTitle).toHaveText('whoami - Personal Portfolio')
 
     await page.getByTestId('filter-Company Work').click()
-    await expect(activeTitle).toHaveText('E-Commerce Sync & Batch Platform')
+    await expect(activeTitle).toHaveText('E-Commerce Batch Platform')
 
     await page.getByTestId('filter-All').click()
 

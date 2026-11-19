@@ -241,7 +241,7 @@ function formatIndex(num) {
               class="text-[var(--text-main)] hover:text-[var(--accent-primary)] font-medium"
               @click.stop
             >
-              Live ↗
+              Health ↗
             </a>
             <span v-else class="text-[var(--text-faint)]">
               {{ project.category }}

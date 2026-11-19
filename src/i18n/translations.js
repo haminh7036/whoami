@@ -13,7 +13,7 @@ export const translations = {
       status: 'Open to opportunities',
       greeting: "Hi, I'm",
       title: 'Backend Engineer',
-      bio: 'Backend Engineer with 5+ years of production experience in PHP (Laravel) and MySQL. Sole Backend Engineer on a 60+ batch e-commerce platform (1M+ SKUs); now building in Go. Daily Linux user on Arch Linux & CachyOS with niri, Ghostty, Fish Shell, and Neovim.',
+      bio: 'PHP / Laravel Backend Engineer with 5+ years of production experience. Sole Backend Engineer on a 60+ batch e-commerce platform (1M+ SKUs) and open-source contributor to Laravel Telescope. Daily Linux user on Arch Linux & CachyOS with niri, Ghostty, Fish Shell, and Neovim.',
       location: 'Ho Chi Minh City, Vietnam',
       viewProjects: 'View Projects',
       getInTouch: 'Contact Me',
@@ -27,14 +27,14 @@ export const translations = {
       editor: 'Neovim',
       wm: 'Wayland (niri)',
       uptime: 'Online',
-      focus: 'PHP (Laravel) & Go'
+      focus: 'PHP (Laravel) & MySQL'
     },
     about: {
       sectionNumber: '01. ABOUT',
       heading: 'About Me',
       subheading: 'cat ~/about/bio.txt',
-      p1: 'Backend Engineer with 5+ years of production experience in PHP (Laravel) and MySQL. Since 2024, scaling and stabilizing a 60+ batch e-commerce platform (1M+ SKUs) for Japanese marketplaces (Rakuten, Yahoo! Shopping): built its PHP 8.4 / Laravel 12 base first and drove the migration from PHP 5.6 / Laravel 5.2 (guiding a teammate to port business logic across the batches and internal staff portal), and now run the platform as its Sole Backend Engineer.',
-      p2: 'Now focused on Go and PostgreSQL, with a personal Go API running on GCP (Docker Compose, Nginx, Cloudflare). Daily environment: Arch Linux and CachyOS with niri, Ghostty, Fish Shell, and Neovim.',
+      p1: 'Backend Engineer with 5+ years of production experience in PHP (Laravel) and MySQL. Since 2024, scaling and stabilizing a 60+ batch e-commerce platform (1M+ SKUs) for Japanese marketplaces (Rakuten, Yahoo! Shopping): built its PHP 8.4 / Laravel 12 base first and drove the 5-month migration from PHP 5.6 / Laravel 5.2 (guiding a teammate to port business logic across the batches and internal staff portal), and now run the platform as its Sole Backend Engineer.',
+      p2: 'Also building personal backend projects in Go and PostgreSQL, including a Go REST API deployed on GCP (Docker Compose, Nginx, Cloudflare). Daily environment: Arch Linux and CachyOS with niri, Ghostty, Fish Shell, and Neovim.',
       coreValuesTitle: 'Open Source & Engineering Focus',
       coreValues:
         'Contributor to Laravel Telescope (2 merged PRs: #1669, #1671). Focused on predictable batch processing, relational query performance, and incremental legacy migrations.'
@@ -76,13 +76,13 @@ export const translations = {
       privateBadge: 'Private / Company',
       publicBadge: 'Open Source',
       viewSource: 'Source',
-      liveDemo: 'Demo',
+      liveDemo: 'Healthcheck API',
       items: [
         {
           id: 'ecommerce-batch-platform',
-          title: 'E-Commerce Sync & Batch Platform',
+          title: 'E-Commerce Batch Platform',
           description:
-            '60+ production batches and internal staff portal syncing 1M+ SKUs with Japanese marketplaces. Built the PHP 8.4 / Laravel 12 base and drove the phased migration from PHP 5.6 / Laravel 5.2; includes CDP browser automation and maintenance-aware scheduling.',
+            '60+ production batches and internal staff portal connecting Japanese marketplaces across product, order, and contact workflows (1M+ SKUs). Built the PHP 8.4 / Laravel 12 base and drove the 5-month migration from PHP 5.6 / Laravel 5.2; includes CDP automation and maintenance scheduling.',
           tags: ['PHP 8.4', 'Laravel 12', 'MySQL', 'Inertia.js', 'Docker'],
           category: 'Company Work',
           private: true,
@@ -103,18 +103,6 @@ export const translations = {
           featured: false
         },
         {
-          id: 'expense-go',
-          title: 'Expense-Go REST API',
-          description:
-            'Personal expense tracking API in Go and PostgreSQL. Packaged as a non-root multi-stage Docker image and deployed on GCP with Docker Compose, Nginx, and Cloudflare SSL/TLS.',
-          tags: ['Go', 'PostgreSQL', 'Docker Compose', 'Nginx', 'GCP'],
-          category: 'Hobby & Personal',
-          private: true,
-          github: '',
-          demo: 'https://api.mingdev.io.vn/health',
-          featured: true
-        },
-        {
           id: 'laravel-telescope',
           title: 'Laravel Telescope (2 Merged PRs)',
           description:
@@ -125,6 +113,18 @@ export const translations = {
           github:
             'https://github.com/laravel/telescope/pulls?q=is%3Apr+author%3Ahaminh7036+state%3Amerged',
           demo: '',
+          featured: true
+        },
+        {
+          id: 'expense-go',
+          title: 'Expense-Go REST API',
+          description:
+            'Personal expense tracking REST API in Go and PostgreSQL. Packaged as a non-root multi-stage Docker image and deployed on GCP with Docker Compose, Nginx, and Cloudflare SSL/TLS (public healthcheck at /health).',
+          tags: ['Go', 'PostgreSQL', 'Docker Compose', 'Nginx', 'GCP'],
+          category: 'Hobby & Personal',
+          private: true,
+          github: '',
+          demo: 'https://api.mingdev.io.vn/health',
           featured: true
         },
         {
@@ -161,11 +161,11 @@ export const translations = {
         {
           name: 'Backend & Databases',
           items: [
-            'Go (Golang)',
             'PHP (5.6 -> 8.4) / Laravel (5.2 -> 12)',
             'MySQL (EXPLAIN & Keyset Pagination)',
-            'PostgreSQL',
-            'RESTful APIs & ETL / Batch Processing'
+            'Symfony Process & RESTful APIs',
+            'ETL / Batch Processing & PostgreSQL',
+            'Go (Personal Projects)'
           ]
         },
         {
