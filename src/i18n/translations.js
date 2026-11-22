@@ -13,7 +13,7 @@ export const translations = {
       status: 'Open to opportunities',
       greeting: "Hi, I'm",
       title: 'Backend Engineer',
-      bio: 'Backend Engineer with 5+ years of production experience in PHP (Laravel) and MySQL. Sole Backend Engineer on a 60+ batch e-commerce platform (1M+ SKUs) and open-source contributor to Laravel Telescope. Daily Linux user on Arch Linux & CachyOS with niri, Ghostty, Fish Shell, and Neovim.',
+      bio: 'Backend Engineer with 5+ years of production experience in PHP (Laravel) and MySQL. Sole Backend Engineer (Dec 2025 - Oct 2026) on a 60+ batch e-commerce platform (1M+ SKUs) and open-source contributor to Laravel Telescope. Daily Linux user on Arch Linux & CachyOS with niri, Ghostty, Fish Shell, and Neovim.',
       location: 'Ho Chi Minh City, Vietnam',
       viewProjects: 'View Projects',
       getInTouch: 'Contact Me',
@@ -33,7 +33,7 @@ export const translations = {
       sectionNumber: '01. ABOUT',
       heading: 'About Me',
       subheading: 'cat ~/about/bio.txt',
-      p1: 'Backend Engineer with 5+ years of production experience in PHP (Laravel) and MySQL. Since 2024, scaling and stabilizing a 60+ batch e-commerce platform (1M+ SKUs) for Japanese marketplaces (Rakuten, Yahoo! Shopping): built its PHP 8.4 / Laravel 12 base first and drove the 5-month migration from PHP 5.6 / Laravel 5.2 (guiding a teammate to port business logic across the batches and internal staff portal), and now run the platform as its Sole Backend Engineer.',
+      p1: 'Backend Engineer with 5+ years of production experience in PHP (Laravel) and MySQL. From 2024 to Oct 2026, scaled and stabilized a 60+ batch e-commerce platform (1M+ SKUs) for Japanese marketplaces (Rakuten, Yahoo! Shopping): built its PHP 8.4 / Laravel 12 base first and drove the 5-month migration from PHP 5.6 / Laravel 5.2 (guiding a teammate to port business logic across the batches and internal staff portal), and served as its Sole Backend Engineer (Dec 2025 - Oct 2026).',
       p2: 'Also building personal backend projects in Go and PostgreSQL, including a Go REST API deployed on GCP (Docker Compose, Nginx, Cloudflare). Daily environment: Arch Linux and CachyOS with niri, Ghostty, Fish Shell, and Neovim.',
       coreValuesTitle: 'Open Source & Engineering Focus',
       coreValues:
@@ -44,12 +44,12 @@ export const translations = {
       subheading: 'git log --oneline',
       items: [
         {
-          period: 'Apr 2024 - Present',
+          period: 'Apr 2024 - Oct 2026',
           role: 'Backend Engineer (Webike Product Team)',
           company: 'Rivercrane Vietnam',
           hash: 'a4c8e12',
           description:
-            'Drove the PHP 5.6 -> 8.4 / Laravel 5.2 -> 12 migration: built the new base first (reproducing legacy outputs to minimize rework), then guided a teammate as we ported 60+ production batches and the staff portal in phases (Jul-Dec 2025); Sole Backend Engineer since Dec 2025. Fixed circular-reference OOM crashes (1M+ SKUs), 3+ hour MySQL query stalls via keyset pagination, and 1-2h image pulls down to 5-15m with parallel rclone.'
+            'Drove the PHP 5.6 -> 8.4 / Laravel 5.2 -> 12 migration: built the new base first (reproducing legacy outputs to minimize rework), then guided a teammate as we ported 60+ production batches and the staff portal in phases (Jul-Dec 2025); Sole Backend Engineer (Dec 2025 - Oct 2026). Fixed circular-reference OOM crashes (1M+ SKUs), 3+ hour MySQL query stalls via keyset pagination, and 1-2h image pulls down to 5-15m with parallel rclone.'
         },
         {
           period: 'Mar 2021 - Apr 2024',
